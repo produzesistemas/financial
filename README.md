@@ -11,6 +11,7 @@ Front-end
 * Bootstrap
 * Typescript 4.4
 * Html
+* Publicado em: https://produzesistemas.com.br/index
 
 Aplicativo Android para e-commerce
 * Arquitetura MVVM
@@ -18,6 +19,7 @@ Aplicativo Android para e-commerce
 * LiveData
 * Coroutines
 * Material Design
+* Publicado em: https://play.google.com/store/apps/details?id=com.br.app.deliverydelicatessen
 
 Aplicativo IOS para e-commerce
 * Ionic Framework 7
