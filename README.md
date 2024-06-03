@@ -1,29 +1,24 @@
-# README #
+Plataforma desenvolvida com o objetivo de ser um portal de controle administrativo de assinaturas de clientes. Desenvolvida com as seguintes tecnologias:
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Back-end:
+* API Rest .net core C#
+* Entity Framework
+* UnitOfWork
+* Repository
 
-### What is this repository for? ###
+Front-end
+* Angular 13
+* Bootstrap
+* Typescript 4.4
+* Html
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Aplicativo Android
+* Arquitetura MVVM
+* Retrofit
+* LiveData
+* Coroutines
+* Material Design
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Aplicativo IOS
+* Ionic Framework 7
+* Angular 15
