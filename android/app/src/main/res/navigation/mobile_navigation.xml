@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_product">
+
+    <fragment
+        android:id="@+id/nav_product"
+        android:name="com.br.app.deliverydelicatessen.ui.products.ProductsFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_products" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.br.app.deliverydelicatessen.ui.about.FragmentAbout"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_shopping_cart"
+        android:name="com.br.app.deliverydelicatessen.ui.shopping_cart.ShoppingCartFragment"
+        android:label="@string/menu_shopping_cart"
+        tools:layout="@layout/fragment_shopping_cart" />
+
+    <fragment
+        android:id="@+id/nav_close_order"
+        android:name="com.br.app.deliverydelicatessen.ui.shopping_cart.CloseOrderFragment"
+        android:label="@string/menu_shopping_cart"
+        tools:layout="@layout/fragment_close_order" />
+
+    <fragment
+        android:id="@+id/nav_order"
+        android:name="com.br.app.deliverydelicatessen.ui.order.DelicatessenOrderFragment"
+        android:label="@string/menu_orders"
+        tools:layout="@layout/fragment_delicatessen_order" />
+
+    <fragment
+        android:id="@+id/nav_payment"
+        android:name="com.br.app.deliverydelicatessen.ui.shopping_cart.PaymentFragment"
+        android:label="@string/label_payment_options"
+        tools:layout="@layout/fragment_payment" />
+
+    <fragment
+        android:id="@+id/nav_address"
+        android:name="com.br.app.deliverydelicatessen.ui.address.AddressFragment"
+        android:label="@string/label_address"
+        tools:layout="@layout/fragment_address" />
+
+    <fragment
+        android:id="@+id/nav_account_address"
+        android:name="com.br.app.deliverydelicatessen.ui.account.AccountAddressFragment"
+        android:label="@string/label_address"
+        tools:layout="@layout/fragment_address" />
+
+    <fragment
+        android:id="@+id/nav_new_address"
+        android:name="com.br.app.deliverydelicatessen.ui.address.AddressFragmentNew"
+        android:label="@string/menu_new_address"
+        tools:layout="@layout/fragment_address_new" />
+
+    <fragment
+        android:id="@+id/nav_personal_data"
+        android:name="com.br.app.deliverydelicatessen.ui.account.PersonalDataFragment"
+        android:label="@string/menu_new_address"
+        tools:layout="@layout/fragment_personal_data" />
+
+    <fragment
+        android:id="@+id/nav_edit_address"
+        android:name="com.br.app.deliverydelicatessen.ui.address.AddressFragmentEdit"
+        android:label="@string/menu_new_address"
+        tools:layout="@layout/fragment_address_new" />
+
+    <fragment
+        android:id="@+id/nav_order_detail"
+        android:name="com.br.app.deliverydelicatessen.ui.order.DelicatessenOrderFragmentDetail"
+        android:label="@string/menu_orders"
+        tools:layout="@layout/fragment_delicatessen_order_detail" />
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.br.app.deliverydelicatessen.ui.account.AccountFragment"
+        android:label="@string/menu_new_address"
+        tools:layout="@layout/fragment_account" />
+
+</navigation>

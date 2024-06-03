@@ -1,0 +1,88 @@
+<div class="container py-3">
+  <div class="row gx-5">
+    <div class="col">
+      <div class="text-center bg-primary text-white">Log</div>
+      <div class="p-3 border bg-white">
+        <div class="py-1">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <form [formGroup]="form">
+                  <div class="form-group">
+                    <label><strong>Informe a descrição abaixo para efetuar a busca</strong></label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" formControlName="description"
+                        aria-describedby="button-addon4">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label><strong>Informe o Tipo no campo abaixo para efetuar a busca</strong></label>
+                    <select class="form-select" formControlName="type">
+                      <option [value]="type.type" *ngFor="let type of lstType">
+                        {{type.name}}
+                      </option>
+                    </select>
+                    <div *ngIf="submitted && f.type.errors">
+                      <p *ngIf="f.type.errors.required" class="text-danger small">* Informe o tipo</p>
+                    </div>
+                  </div>
+                </form>
+                <div class="form-group">
+                  <div class="input-group-append" id="button-addon4">
+                    <button type="button" class="btn btn-primary d-inline-flex align-items-center mt-2" name="btnSearch"
+                      (click)="onSubmit()"> Buscar
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search ms-1" viewBox="0 0 16 16">
+                        <path
+                          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                      </svg></button>
+                    <button class="btn btn-primary d-inline-flex align-items-center mt-2 ms-2" (click)="onReset()">
+                      Limpar busca
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-x-lg ms-1" viewBox="0 0 16 16">
+                        <path
+                          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-12 col-lg-12">
+                <div class="table-responsive">
+                  <table class="table table-striped table-sm">
+                    <thead>
+                      <tr>
+                        <th>
+                          Data
+                        </th>
+                        <th>
+                          Descrição
+                        </th>
+                        <th>
+                          Tipo
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor='let item of lstLog | slice: (page-1) * pageSize : page * pageSize'>
+                        <td>{{ item.createDate | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ getType(item.type) }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <ngb-pagination [(page)]="page" [pageSize]="pageSize"
+                    [collectionSize]="lstLog.length"></ngb-pagination>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

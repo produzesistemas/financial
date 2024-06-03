@@ -1,0 +1,184 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Empório Jauá Delicatessen</string>
+    <string name="action_settings">Settings</string>
+    <string name="availability">Informe o CEP para verificar a disponibilidade.</string>
+    <string name="verify">Verificar</string>
+    <string name="exit_to_app">Sair do app</string>
+    <string name="logout">Desconectar do app</string>
+<!--<string name="server_client_id">335904280824-qm57tfi312gusumdr3rbv260coi850cp.apps.googleusercontent.com</string>-->
+    <string name="server_client_id">335904280824-qm57tfi312gusumdr3rbv260coi850cp.apps.googleusercontent.com</string>
+
+    <string name="validation_connection">Dispositivo sem internet.</string>
+    <string name="validation_postal_code">Informe o CEP!</string>
+    <string name="validation_email">Informe o e-mail.</string>
+    <string name="validation_code">Informe o código recebido.</string>
+    <string name="validation_code_incomplete">Informe o código corretamente.</string>
+    <string name="validation_category_not_found">Categorias não encontradas.</string>
+    <string name="validation_products_not_found">Nenhum produto encontrado para essa categoria.</string>
+    <string name="validation_search_description">Buscar no cardápio</string>
+    <string name="validation_shopping_cart_empty">O seu carrinho está vazio. Adicione produtos.</string>
+    <string name="validation_address_not_found">Não foi encontrado o endereço da sua localização. Digite um CEP na próxima tela.</string>
+    <string name="validation_payment_options">Obrigatório marcar a opção de pagamento</string>
+    <string name="validation_delivery_options">Obrigatório marcar a opção de entrega</string>
+    <string name="validation_address_mandatory">Obrigatório selecionar um endereço de entrega!</string>
+    <string name="validation_card_type">Obrigatório marcar o tipo de cartão</string>
+    <string name="validation_brand_card">Obrigatório selecionar a bandeira do cartão</string>
+    <string name="validation_coupon">Cupom não encontrado</string>
+    <string name="validation_login_google_fail">Login com a Google falhou! Verifique sua conta na Google!</string>
+    <string name="validation_login_google">Login efetuado com sucesso com a Google!</string>
+
+    <string name="validation_street">Informe o endereço!</string>
+    <string name="validation_district">Informe o bairro!</string>
+
+    <string name="validation_name">Informe o seu nome!</string>
+    <string name="validation_phone">Informe o seu telefone!</string>
+    <string name="validation_address_nothing">Nenhum endereço encontrado!</string>
+    <string name="validation_order_nothing">Nenhum pedido encontrado!</string>
+
+<string name="welcome">BEM-VINDO</string>
+    <string name="permission_location">Permitir acessar a sua localização?</string>
+    <string name="info_permission_location">Para descobrir se o Empório Jauá Delicatessen entrega na sua região</string>
+    <string name="label_warning">Atenção</string>
+    <string name="label_description">Descrição</string>
+    <string name="label_value_product">Valor</string>
+    <string name="label_subtotal_product">Subtotal</string>
+    <string name="label_code">Digite o Código recebido</string>
+    <string name="label_delivery_in">Entregar em</string>
+    <string name="label_login">Login</string>
+    <string name="label_email">Informe o e-mail</string>
+    <string name="label_receive_code">Receber código de acesso</string>
+    <string name="label_in">De</string>
+    <string name="label_at">em</string>
+    <string name="label_per">Por</string>
+    <string name="label_phone">Informe o telefone</string>
+    <string name="label_cpf">Informe o CPF</string>
+    <string name="label_name">Informe o nome</string>
+    <string name="label_resume_order">Resumo do pedido</string>
+    <string name="label_close_order">Fechamento do pedido</string>
+    <string name="label_personal_data">Dados pessoais</string>
+    <string name="label_delivery_options">Opção de entrega</string>
+    <string name="label_tracking">Acompanhamento do pedido</string>
+    <string name="label_minimum_value">Pedido mínimo</string>
+    <string name="login_google">Login com Google</string>
+    <string name="label_total_value_shopping">Valor total do carrinho</string>
+    <string name="label_tax_value">Valor da taxa de entrega</string>
+    <string name="label_value_total">Valor total do pedido</string>
+    <string name="label_value_total_product">Valor total dos produtos</string>
+    <string name="label_status_order">Situação do pedido</string>
+    <string name="label_request_date">Data do pedido</string>
+    <string name="label_delivery_to">Entregar para</string>
+    <string name="label_contact_phone">Telefone de contato</string>
+    <string name="label_quantity">Quantidade</string>
+    <string name="label_district">Bairro</string>
+    <string name="label_district_city_uf">Bairro / Cidade / Estado</string>
+    <string name="label_city">Cidade/UF</string>
+    <string name="label_uf">Estado</string>
+    <string name="label_postal_code">CEP</string>
+    <string name="label_postal_code_verify">Informe o CEP para verificar a disponibilidade</string>
+    <string name="label_reference">Ponto de referência</string>
+    <string name="label_address">Endereço de entrega</string>
+    <string name="label_public_place">Logradouro</string>
+    <string name="label_permission_granted">Permissão concedida</string>
+    <string name="label_permission_denied">Permissão negada</string>
+    <string name="label_payment_options">Opção de pagamento</string>
+    <string name="label_payment_condition">Forma de pagamento</string>
+    <string name="label_data_credit_card">Dados do cartão de crédito</string>
+    <string name="label_zero">0,00</string>
+    <string name="label_payment_condition_pix">PIX</string>
+    <string name="label_payment_condition_credit_card">Cartão de crédito</string>
+
+    <string name="label_delivery">Delivery</string>
+    <string name="label_in_store_pickup">Retirada na loja</string>
+
+    <string name="label_payment_online">Pelo App</string>
+    <string name="label_payment_little_machine">Maquininha</string>
+    <string name="label_select_card_type">Selecione o tipo e a bandeira do cartão</string>
+    <string name="label_payment_money">Dinheiro</string>
+    <string name="label_change_of_money">Troco para</string>
+    <string name="label_brand">Bandeira</string>
+
+    <string name="label_credit_card">Cartão de crédito</string>
+    <string name="label_debit_card">Cartão de débito</string>
+    <string name="label_your_hunger">Falta pouco para matar sua fome</string>
+    <string name="label_how_do_you_want_to_continue">Como deseja continuar?</string>
+    <string name="label_informing_email">Informe o e-mail ou faça login pela Google</string>
+
+    <string name="label_payment_data">Dados do pagamento</string>
+    <string name="label_payment_card_number">Número do cartão</string>
+    <string name="label_payment_name_holder">Nome do titular</string>
+    <string name="label_payment_type_card">Selecione o Tipo de cartão</string>
+    <string name="label_payment_select_brand">Selecione a bandeira do seu cartão</string>
+    <string name="label_payment_security_code">Código de segurança</string>
+    <string name="label_payment_expiration_date">Data de expiração</string>
+    <string name="label_coupon">Informe o código do Cupom para efetuar a busca</string>
+    <string name="label_search_coupon">Código do Cupom</string>
+    <string name="label_set_coupon">Cupom aplicado</string>
+
+    <string name="msg_error_authentication_failure">Autenticação falhou!</string>
+    <string name="msg_error_session_expired">Sessão expirada! Faça novamente o login</string>
+    <string name="msg_clear">Deseja realmente limpar o carrinho?</string>
+    <string name="msg_coupon">Cupom aplicado com sucesso!</string>
+    <string name="msg_deliver_region_not_found">Não fazemos entrega no CEP informado!</string>
+    <string name="msg_error_email_exist_google">Esse endereço de email já foi utilizado para se conectar no app com o Google</string>
+    <string name="msg_save_success">Os dados foram salvos com sucesso!</string>
+
+    <string name="hint_email_code">Informe o e-mail para receber o código</string>
+
+    <string name="error_400">Falha na tentativa!</string>
+    <string name="error_no_data">Nenhum dado encontrado!</string>
+    <string name="error_503">Aplicativo fora do ar. Aguarde o retorno!</string>
+    <string name="error_expiration_date">Data de expiração do cartão é inválida!</string>
+    <string name="error_holder_name">Nome do Cliente inválido!</string>
+    <string name="error_999">Problemas na identificação do cartão! Verifique os dados.</string>
+    <string name="error_146">Código de segurança é inválido!</string>
+    <string name="error_129">Meio de pagamento não vinculado a loja ou Provider inválido!</string>
+
+    <string name="action_confirmar">Confirmar</string>
+    <string name="action_close">Fechar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_go_back">Voltar</string>
+    <string name="action_verify">Verificar entrega</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_buy">Comprar</string>
+    <string name="action_clear">Limpar o carrinho</string>
+    <string name="action_update_address">Alterar</string>
+    <string name="action_inform_modify">Informar / Alterar</string>
+    <string name="action_new_address">Novo</string>
+    <string name="action_select_address">Trocar CEP</string>
+    <string name="action_login_email">Receber código por e-mail</string>
+    <string name="action_resend_code">Reenviar código</string>
+    <string name="action_permission">Permitir</string>
+    <string name="action_not_permission">Ou digitar um CEP</string>
+    <string name="action_has_code">Já tenho código</string>
+    <string name="action_continue">Continuar</string>
+    <string name="action_login_google">Login com a Google</string>
+
+    <string name="menu_about">Sobre</string>
+    <string name="menu_product">Produtos</string>
+    <string name="menu_orders">Pedidos</string>
+    <string name="menu_category">Categorias</string>
+    <string name="menu_address">Endereços</string>
+    <string name="menu_new_address">Novo Endereço</string>
+    <string name="menu_home">Início</string>
+    <string name="menu_shopping_cart">Minha sacola</string>
+    <string name="menu_account">Meu Perfil</string>
+    <string name="menu_postal_code">Trocar o CEP</string>
+    <string name="menu_delete_shopping_cart">Limpar carrinho</string>
+    <string name="menu_close_order">Fechar pedido</string>
+    <string name="menu_payment">Ir para pagamento</string>
+    <string name="menu_carte">Cardápio</string>
+
+    <string-array name="ArrayDeliveryOptions">
+        <item>0,Selecione</item>
+        <item>1,Delivery</item>
+        <item>2,Retirar na loja</item>
+    </string-array>
+
+    <string-array name="ArrayPaymentOptions">
+        <item>0,Selecione</item>
+        <item>1,OnLine</item>
+        <item>2,Maquininha</item>
+        <item>3,Dinheiro</item>
+    </string-array>
+
+</resources>

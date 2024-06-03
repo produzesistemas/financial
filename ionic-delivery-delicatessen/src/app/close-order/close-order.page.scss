@@ -1,0 +1,44 @@
+// ion-col {
+//     display: flex;
+//      align-items: center;
+//      justify-content: center;
+//   }
+    
+                .bottomRow
+                {
+                  margin-top: -20px;
+                }
+.text-size {
+  font-size: 11px;
+}
+
+ion-radio::part(container) {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+ion-radio::part(mark) {
+  background: none;
+  transition: none;
+  transform: none;
+  border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+  background: #663333;
+  border-color: transparent;
+}
+
+ion-radio.radio-checked::part(mark) {
+  width: 6px;
+  height: 10px;
+
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-color: #fff;
+
+  transform: rotate(45deg);
+}

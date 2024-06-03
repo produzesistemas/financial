@@ -1,0 +1,42 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"></ion-back-button>    
+  </ion-buttons>
+  <ion-row class="text-size">
+      <ion-label><ion-icon slot="start" name="location-outline"></ion-icon> Entregar em {{lastPostalCode}}</ion-label>  
+    </ion-row>
+
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div id="container">
+  <ion-grid *ngIf="account">
+    <ion-row class="ion-margin">
+      <ion-col>
+        <ion-label>Dados pessoais: </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin">
+      <ion-col>
+        <ion-card-subtitle>{{account.name}}</ion-card-subtitle>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin">
+      <ion-col>
+        <ion-card-subtitle>{{account.email}}</ion-card-subtitle>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+  </div>
+</ion-content>

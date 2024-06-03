@@ -1,0 +1,134 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/order"></ion-back-button>      </ion-buttons>
+  <ion-row class="text-size">
+    </ion-row>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="delicatessenOrder !== undefined">
+    <ion-card>
+      <ion-grid id="main-content">
+        <ion-row>
+          <ion-col>
+            <ion-label class="text-bold">Data do pedido: </ion-label>
+            <ion-label> {{delicatessenOrder.requestDate | date: 'dd/MM/yyyy'}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label class="text-bold">Situação do pedido:</ion-label>
+            <ion-label> {{getDelicatessenOrderStatus(delicatessenOrder)}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row> 
+          <ion-col>
+            <ion-label class="text-bold">Opção de entrega:</ion-label>
+            <ion-label> {{getDeliveryOption(delicatessenOrder)}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row> 
+          <ion-col>
+            <ion-label class="text-bold">Opção de pagamento:</ion-label>
+            <ion-label> {{getPaymentOption(delicatessenOrder)}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row> 
+          <ion-col>
+            <ion-label class="text-bold">Forma de pagamento:</ion-label>
+            <ion-label> {{getPaymentCondition(delicatessenOrder)}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row> 
+          <ion-col>
+            <ion-label class="text-bold">Troco para:</ion-label>
+            <ion-label> {{delicatessenOrder.exchangeForCash | currency:'R$'}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row> 
+          <ion-col>
+            <ion-item class="text-center">
+            <ion-label>Produtos</ion-label>
+          </ion-item>
+          </ion-col>
+        </ion-row>
+<ion-card *ngFor="let delicatessenOrderProduct of delicatessenOrder.delicatessenOrderProducts">
+  <ion-grid>
+
+        <ion-row >
+          <ion-col size="auto">
+            <ion-avatar>
+              <ion-img [src]="getImage(delicatessenOrderProduct.delicatessenProduct!.imageName)"></ion-img>
+            </ion-avatar>
+           </ion-col> 
+           <ion-col>
+            <ion-row>
+              <ion-label class="text-bold">{{ delicatessenOrderProduct.delicatessenProduct!.description }}</ion-label>  
+            </ion-row>
+            <ion-row> 
+              <ion-col>
+                <ion-label class="text-bold">Valor:</ion-label>
+                <ion-label> {{delicatessenOrderProduct.delicatessenProduct!.value | currency:'R$'}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row> 
+              <ion-col>
+                <ion-label class="text-bold">Subtotal:</ion-label>
+                <ion-label> {{delicatessenOrderProduct.value! * delicatessenOrderProduct.quantity! | currency:'R$'}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row> 
+              <ion-col>
+                <ion-label class="text-bold">Quantidade:</ion-label>
+                <ion-label> {{delicatessenOrderProduct.quantity}}</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row> 
+  </ion-grid>
+      </ion-card>   
+
+      <ion-row> 
+        <ion-col>
+          <ion-label class="text-bold">Valor total dos produtos:</ion-label>
+          <ion-label> {{getTotalValueProducts(delicatessenOrder) | currency:'R$'}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row> 
+        <ion-col>
+          <ion-label class="text-bold">Valor da taxa de entrega:</ion-label>
+          <ion-label> {{delicatessenOrder.taxValue | currency:'R$'}}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row> 
+        <ion-col>
+          <ion-label class="text-bold">Valor total do pedido:</ion-label>
+          <ion-label> {{getTotalSale(delicatessenOrder) | currency:'R$'}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row> 
+        <ion-col>
+          <ion-item class="text-center">
+          <ion-label>Acompanhamento do pedido</ion-label>
+        </ion-item>
+        </ion-col>
+      </ion-row>
+
+<ion-list *ngFor="let delicatessenOrderTracking of delicatessenOrder.delicatessenOrderTrackings">
+  <ion-item>
+        <ion-label>{{ delicatessenOrderTracking.statusOrder!.description }} em {{delicatessenOrderTracking.followupDate | date: 'dd/MM/yyyy'}}</ion-label>  
+
+  </ion-item>
+</ion-list>
+
+
+
+
+        </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

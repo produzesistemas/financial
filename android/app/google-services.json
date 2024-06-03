@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "335904280824",
+    "project_id": "emporio-jaua",
+    "storage_bucket": "emporio-jaua.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335904280824:android:abca999ff7a1aa9ba06b0d",
+        "android_client_info": {
+          "package_name": "com.br.app.deliverydelicatessen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335904280824-2mqia7d1k114dk5g7sr3lh0mo283qd06.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.br.app.deliverydelicatessen",
+            "certificate_hash": "1c467aeac3806b117c778138835fda3014a8d19d"
+          }
+        },
+        {
+          "client_id": "335904280824-g8kv6q3i61ubtsouvi2a10235cmnd53v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.br.app.deliverydelicatessen",
+            "certificate_hash": "4e8e265ce5f479dee76b5e76a368f3add83ea40d"
+          }
+        },
+        {
+          "client_id": "335904280824-vpg3kn9ojk5bsi6rllacloeqlcfi58ie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.br.app.deliverydelicatessen",
+            "certificate_hash": "670643604b69c1e5b7c290a4885df04d73754998"
+          }
+        },
+        {
+          "client_id": "335904280824-qm57tfi312gusumdr3rbv260coi850cp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDNTn2gUQneQCICvqrOC4TsS_bHAKAK9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335904280824-qm57tfi312gusumdr3rbv260coi850cp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

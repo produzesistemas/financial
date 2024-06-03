@@ -1,0 +1,7 @@
+{
+  "name": "ionic-delivery-delicatessen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

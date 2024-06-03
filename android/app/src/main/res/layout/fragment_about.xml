@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_between_views">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="@dimen/margin_default"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textAlignment="center"
+                        android:padding="@dimen/nav_header_vertical_spacing"
+                        android:textAppearance="?attr/textAppearanceHeadline2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Versão: "
+                        android:textAlignment="center"
+                        android:padding="@dimen/nav_header_vertical_spacing"
+                        android:textAppearance="?attr/textAppearanceHeadline2"/>
+
+                    <TextView
+                        android:id="@+id/versaoTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_between_views"
+                        android:textAppearance="?attr/textAppearanceHeadline4"
+                        android:text="0.0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Desenvolvido por: "
+                        android:textAlignment="center"
+                        android:padding="@dimen/nav_header_vertical_spacing"
+                        android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/circleImageView"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_horizontal"
+                        android:tint="@color/black"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/icons8_facebook_500"
+                        app:civ_border_width="1dp" />
+
+
+                </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

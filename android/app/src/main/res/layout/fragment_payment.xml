@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_between_views">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+          <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default"
+              app:cardElevation="1dp"
+              app:strokeColor="@color/white"
+              app:cardUseCompatPadding="true">
+
+              <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                  <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:text="@string/label_close_order"
+                            android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                    </RelativeLayout>
+
+                  </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:padding="@dimen/nav_header_vertical_spacing"
+                    android:background="@android:color/darker_gray" />
+
+              <androidx.appcompat.widget.LinearLayoutCompat
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_header_vertical_spacing"
+                    android:text="@string/label_total_value_shopping"
+                    android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                <TextView
+                    android:id="@+id/textViewValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_header_vertical_spacing"
+                    android:textAppearance="?attr/textAppearanceHeadline3" />
+              </androidx.appcompat.widget.LinearLayoutCompat>
+
+                  <androidx.appcompat.widget.LinearLayoutCompat
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:padding="@dimen/nav_header_vertical_spacing"
+                          android:text="@string/label_tax_value"
+                          android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                      <TextView
+                          android:id="@+id/textViewTaxValue"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:padding="@dimen/nav_header_vertical_spacing"
+                          android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                  </androidx.appcompat.widget.LinearLayoutCompat>
+
+                  <androidx.appcompat.widget.LinearLayoutCompat
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:padding="@dimen/nav_header_vertical_spacing"
+                          android:text="@string/label_value_total"
+                          android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                      <TextView
+                          android:id="@+id/textViewValueTotal"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:padding="@dimen/nav_header_vertical_spacing"
+                          android:textAppearance="?attr/textAppearanceHeadline3" />
+                  </androidx.appcompat.widget.LinearLayoutCompat>
+
+              <androidx.appcompat.widget.LinearLayoutCompat
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+                  <TextView
+                      android:id="@+id/textViewLabelCoupon"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/nav_header_vertical_spacing"
+                      android:text="@string/label_coupon"
+                      android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                  <androidx.appcompat.widget.LinearLayoutCompat
+                      android:id="@+id/linearLayoutSetCoupon"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:visibility="gone"
+                      android:orientation="horizontal">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/nav_header_vertical_spacing"
+                      android:text="@string/label_set_coupon"
+                      android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                  <TextView
+                      android:id="@+id/textViewCodeCoupon"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/nav_header_vertical_spacing"
+                      android:textAppearance="?attr/textAppearanceHeadline3" />
+                  </androidx.appcompat.widget.LinearLayoutCompat>
+
+                  <RelativeLayout
+                      android:id="@+id/relativeLayoutCoupon"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_margin="@dimen/margin_default">
+
+                      <com.google.android.material.textfield.TextInputLayout
+                          android:id="@+id/inputLayout"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          >
+
+                          <EditText
+                              android:id="@+id/editTextCoupon"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:background="@null"
+                              android:paddingStart="@dimen/margin_default"
+                              android:hint="@string/label_search_coupon"
+                              android:inputType="text"
+                              android:maxLength="255"
+                              android:maxLines="1" />
+
+                      </com.google.android.material.textfield.TextInputLayout>
+
+                      <ImageButton
+                          android:id="@+id/imageButton"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_alignTop="@+id/inputLayout"
+                          android:layout_alignRight="@+id/inputLayout"
+                          android:layout_alignBottom="@+id/inputLayout"
+                          android:layout_marginEnd="@dimen/margin_default"
+                          android:background="@null"
+                          android:src="@drawable/ic_baseline_search_24" />
+
+                  </RelativeLayout>
+
+
+              </androidx.appcompat.widget.LinearLayoutCompat>
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:padding="@dimen/nav_header_vertical_spacing"
+                      android:text="@string/label_payment_options"
+                      android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                  <RadioGroup
+                      android:id="@+id/radioGroupPaymentOptions"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:theme="@style/CustomRadioGroup">
+
+                      <RadioButton
+                          android:id="@+id/radioButtonOnLine"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/label_payment_online"/>
+
+                      <RadioButton
+                          android:id="@+id/radioButtonLittleMachine"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/label_payment_little_machine"/>
+
+                      <RadioButton
+                          android:id="@+id/radioButtonMoney"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/label_payment_money"/>
+
+                  </RadioGroup>
+
+
+              </androidx.appcompat.widget.LinearLayoutCompat>>
+        </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewOnline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:visibility="gone"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/white"
+                app:cardUseCompatPadding="true">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:padding="@dimen/nav_header_vertical_spacing"
+                        android:text="@string/label_payment_condition"
+                        android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:padding="@dimen/nav_header_vertical_spacing"
+                android:background="@android:color/darker_gray" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radioGroupPaymentCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:theme="@style/CustomRadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonPix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_payment_condition_pix"
+                        android:drawableStart="@drawable/ic_baseline_pix_24"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButtonCreditCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_payment_condition_credit_card"
+                        android:drawableStart="@drawable/ic_baseline_credit_card_24"/>
+
+                </RadioGroup>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewChangeMoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_default"
+                    android:visibility="gone"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/white"
+                    app:cardUseCompatPadding="true">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:padding="@dimen/nav_header_vertical_spacing"
+                                    android:text="@string/label_change_of_money"
+                                    android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                            </RelativeLayout>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:background="@android:color/darker_gray" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/fab_margin"
+                            android:layout_gravity="center|center_horizontal|center_vertical"
+                            app:counterMaxLength="18">
+
+                            <EditText
+                                android:id="@+id/editTextChangeMoney"
+                                android:hint="@string/label_change_of_money"
+                                android:inputType="number"
+                                android:background="@null"
+                                android:maxLength="18"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCardType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:text="@string/label_select_card_type"
+                            android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:padding="@dimen/nav_header_vertical_spacing"
+                    android:background="@android:color/darker_gray" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupCardType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_default"
+                    android:orientation="horizontal"
+                    android:theme="@style/CustomRadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonCredit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_credit_card"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButtonDebit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_debit_card"/>
+
+                </RadioGroup>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutCredit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Spinner
+                        android:id="@+id/spinnerBrandCredit"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/dropdownListPreferredItemHeight"
+                        android:spinnerMode="dropdown">
+
+                    </Spinner>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_baseline_expand_more_24" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutDebit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Spinner
+                        android:id="@+id/spinnerBrandDebit"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/dropdownListPreferredItemHeight"
+                        android:spinnerMode="dropdown">
+
+                    </Spinner>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_baseline_expand_more_24" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu_bottom_payment"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

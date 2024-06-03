@@ -1,0 +1,115 @@
+<ion-content [fullscreen]="true" color="light">
+  <div id="container">
+
+
+  <ion-grid>
+    <ion-row class="bottomRow">
+      <ion-col>
+        <ion-row class="ion-padding">
+          <ion-col>
+            <ion-avatar class="img"><img src="./assets/images/logo.jpg"></ion-avatar>
+          </ion-col>  
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label style="font-weight: bold; font-size: 15px; color: rgb(78, 71, 71);" class="ion-margin">Falta pouco para matar sua fome</ion-label>
+      </ion-col>
+    </ion-row>
+    <div *ngIf="!hascode">
+      <ion-row>
+        <ion-col>
+          <ion-label>Como deseja continuar?</ion-label>
+        </ion-col>
+      </ion-row>
+      <form [formGroup]="formEmail">  
+      <ion-row>
+        <ion-col>
+          <ion-label>Informe o e-mail ou faça login pela google</ion-label>
+        </ion-col>
+      </ion-row>
+          <ion-col class="ion-margin-top">
+            <ion-input name="email" type="text" required placeholder="Informe o e-mail para receber o código" formControlName="email"></ion-input>
+          </ion-col>
+          <div class="error-container" *ngIf="submitted">
+            <div>
+              <p *ngIf="formEmail.get('email').errors">
+                <ion-label color="danger">* Informe o e-mail</ion-label>
+              </p>
+            </div>
+          </div>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" fill="solid" shape="round" expand="full" (click)="onConfirm()">
+          Receber código por e-mail
+          <ion-icon slot="start" name="mail"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+      </form>
+    <ion-row>
+      <ion-col>
+        <ion-button class="button-text-white" shape="round" color="secondary" fill="solid" expand="full" (click)="onBack()">Voltar
+          <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  
+    </div>
+    <form [formGroup]="formCode">  
+      <div *ngIf="hascode">
+      <ion-row>
+        <ion-col>
+          <ion-label style="font-weight: bold; font-size: 15px; color: rgb(78, 71, 71);" class="ion-margin">Digite o Código recebido</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input #number1 name="number1" type="text" formControlName="number1" (keyup)="onKeyUp($event, number2)" 
+          [maskito]="onlyNumberMask"
+          [maskitoElement]="maskPredicate"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input #number2 name="number2" type="text" formControlName="number2" (keyup)="onKeyUp($event, number3)"
+          [maskito]="onlyNumberMask"
+          [maskitoElement]="maskPredicate"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input #number3 name="number3" type="text" formControlName="number3" (keyup)="onKeyUp($event, number4)"
+          [maskito]="onlyNumberMask"
+          [maskitoElement]="maskPredicate"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input #number4 name="number4" type="text" formControlName="number4" (keyup)="onKeyUp($event, null)"
+          [maskito]="onlyNumberMask"
+          [maskitoElement]="maskPredicate"></ion-input>
+        </ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="button-text-white" color="secondary" fill="solid" expand="full" (click)="onBackHasCode()">Voltar
+            <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>  
+      <ion-row>
+        <ion-col>
+          <ion-button class="button-text-white" color="secondary" fill="solid" expand="full" (click)="onCleanCode()">Limpar código
+            <ion-icon slot="start" name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>  
+      <ion-row>
+      <ion-col>
+        <ion-button class="button-text-white" color="secondary" fill="solid" expand="full" (click)="onBack()">Reenviar código
+          <ion-icon slot="start" name="code"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    </div>
+    </form>
+</ion-grid>
+  </div>
+</ion-content>

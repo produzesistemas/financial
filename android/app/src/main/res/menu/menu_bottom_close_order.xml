@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_change_postal_code"
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="@string/action_select_address"/>
+
+    <item
+        android:id="@+id/navigation_payment"
+        android:icon="@drawable/ic_baseline_arrow_forward_24"
+        android:title="@string/action_continue"/>
+
+</menu>

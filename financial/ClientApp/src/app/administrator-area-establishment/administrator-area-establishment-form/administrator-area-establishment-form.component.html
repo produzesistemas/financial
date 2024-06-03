@@ -1,0 +1,120 @@
+<div class="container py-3">
+  <div class="row gx-5">
+    <div class="col-sm-9 col-md-7 col-lg-7 mx-auto">
+      <div class="text-center bg-primary text-white">Cadastro de estabelecimento</div>
+      <div class="p-3 border bg-white">
+        <div class="py-1">
+          <div class="form-group">
+            <img *ngIf="logo" class="img-thumbnail" src={{logo}}>
+          </div>
+          <div class="form-group">
+            <label>Selecione a logomarca:</label>
+            <input type="file" name="fileUpload" (change)="onFileChange($event)" id="file" #file class="form-control"
+              accept=".jpg, .png, .gif" />
+          </div>
+
+          <form [formGroup]='form'>
+            <div class="form-group">
+              <label>Módulo:</label>
+              <select class="form-select" formControlName="module">
+                <option [value]="m.id" *ngFor="let m of modules">{{m.description}}</option>
+              </select>
+            </div>
+            <div *ngIf="submitted && f.module.errors">
+              <p *ngIf="f.module.errors.required" class="text-danger small">* Selecione o módulo</p>
+            </div>
+            <div class="form-group">
+              <label>Nome do estabelecimento:</label>
+              <input type="text" maxlength="255" formControlName="name"
+                placeholder="Informe o nome do estabelecimento..." class="form-control">
+            </div>
+            <div *ngIf="submitted && f.name.errors">
+              <p *ngIf="f.name.errors.required" class="text-danger small">* Informe o nome</p>
+            </div>
+
+            <div class="form-group">
+              <label>Descrição do estabelecimento:</label>
+              <input type="text" maxlength="255" formControlName="description"
+                placeholder="Informe a descrição do estabelecimento..." class="form-control">
+            </div>
+            <div *ngIf="submitted && f.description.errors">
+              <p *ngIf="f.description.errors.required" class="text-danger small">* Informe a descrição</p>
+            </div>
+
+            <div class="form-group">
+              <label>Cep:</label>
+              <input formControlName="postalCode" type="text" class="form-control" placeholder="Informe o cep....."
+                mask="00000-000">
+              <div *ngIf="submitted && f.postalCode.errors">
+                <p *ngIf="f.postalCode.errors.required" class="text-danger small">* Informe o
+                  CEP
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Endereço:</label>
+              <input type="text" maxlength="255" formControlName="address" placeholder="Informe o endereço..."
+                class="form-control">
+            </div>
+            <div *ngIf="submitted && f.address.errors">
+              <p *ngIf="f.address.errors.required" class="text-danger small">* Informe o endereço</p>
+            </div>
+
+            <div class="form-group">
+              <label>Telefone do Contato Responsável pela Loja:</label>
+              <input type="text" formControlName="phone" placeholder="Informe o telefone de contato..."
+                class="form-control" mask="(00)00000-0000">
+            </div>
+            <div *ngIf="submitted && f.phone.errors">
+              <p *ngIf="f.phone.errors.required" class="text-danger small">* Informe o telefone</p>
+            </div>
+
+            <div class="form-group">
+              <label>Nome do Contato Responsável pela Loja:</label>
+              <input type="text" formControlName="contactName" placeholder="Informe o nome de contato..."
+                class="form-control">
+            </div>
+            <div *ngIf="submitted && f.contactName.errors">
+              <p *ngIf="f.contactName.errors.required" class="text-danger small">* Informe o nome do contato</p>
+            </div>
+
+
+            <div class="form-group">
+              <label>Cnpj:</label>
+              <input formControlName="cnpj" type="text" class="form-control" placeholder="Informe o cnpj....."
+                aria-label="Informe o cnpj" aria-describedby="button-addon2" mask="00.000.000/0000-00">
+            </div>
+            <div *ngIf="submitted && f.cnpj.errors">
+              <p *ngIf="f.cnpj.errors.required" class="text-danger small">* Informe o cnpj</p>
+            </div>
+            <div class="form-group">
+              <label>E-mail:</label>
+              <input type="text" maxlength="255" formControlName="email" class="form-control">
+              <div *ngIf="submitted && f.email.errors">
+                <p *ngIf="f.email.errors.required" class="text-danger small">* Informe o email</p>
+              </div>
+            </div>
+          </form>
+
+          <div class="mt-2">
+            <button class="btn btn-primary d-inline-flex align-items-center" (click)="onSave()"> Salvar
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-floppy ms-1" viewBox="0 0 16 16">
+                <path d="M11 2H9v3h2z" />
+                <path
+                  d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+              </svg></button>
+            <button type="button" class="btn btn-primary d-inline-flex align-items-center ms-2" (click)="onCancel()">
+              Voltar
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-left ms-1" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

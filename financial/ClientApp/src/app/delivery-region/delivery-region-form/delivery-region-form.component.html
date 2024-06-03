@@ -1,0 +1,48 @@
+<form [formGroup]="form">
+  <div class="container py-3">
+    <div class="row gx-5">
+      <div class="col-sm-9 col-md-7 col-lg-7 mx-auto">
+        <div class="text-center bg-primary text-white"><small>Cadastro de Região de entrega</small></div>
+
+        <div class="p-3 border bg-white">
+          <div class="py-1">
+            <div class="form-group col-md-12">
+              <label>Cep:</label>
+              <input type="text" mask="00000-000" formControlName="postalCode" placeholder="Informe o CEP..."
+                class="form-control">
+            </div>
+            <div *ngIf="submitted && f.postalCode.errors">
+              <p *ngIf="f.postalCode.errors.required" class="text-danger small">* Campo CEP é obrigatório</p>
+            </div>
+
+            <div class="form-group col-md-12">
+              <label>Valor:</label>
+              <input currencyMask
+                [options]="{ prefix: '', thousands: '.', decimal: ',', precision: 2, allowNegative: false }"
+                maxlength="18" type="text" placeholder="Informe o valor..." formControlName="value"
+                placeholder="Informe o valor....." class="form-control">
+            </div>
+
+            <div class="mt-2">
+              <button class="btn btn-primary d-inline-flex align-items-center" (click)="onSave()"> Salvar
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-floppy ms-1" viewBox="0 0 16 16">
+                  <path d="M11 2H9v3h2z" />
+                  <path
+                    d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+                </svg></button>
+              <button type="button" class="btn btn-primary d-inline-flex align-items-center ms-2" (click)="onCancel()">
+                Voltar
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-left ms-1" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true" color="light">
+  <div id="container">
+
+<form [formGroup]="form">  
+
+  <ion-grid>
+    <ion-row class="bottomRow">
+      <ion-col>
+          <ion-label>BEM-VINDO</ion-label>
+        <ion-row class="ion-padding">
+          <ion-col>
+            <ion-avatar class="img"><img src="./assets/images/logo.jpg"></ion-avatar>
+          </ion-col>  
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-label class="ion-margin">Informe o CEP para verificar a disponibilidade</ion-label>
+    <ion-col class="ion-margin">
+      <ion-input name="postalCode" type="text" required placeholder="CEP" formControlName="postalCode"
+      [maskito]="phoneMask"
+      [maskitoElement]="maskPredicate"></ion-input>
+    </ion-col>
+    <div class="error-container" *ngIf="submitted">
+      <div>
+        <p *ngIf="form.get('postalCode').errors">
+          <ion-label color="danger">* Informe o CEP</ion-label>
+        </p>
+      </div>
+    </div>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" fill="solid" expand="full" (click)="onConfirm()">
+        Verificar entrega
+        <ion-icon slot="start" name="location-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button class="button-text-white" color="secondary" fill="solid" expand="full" (click)="onBack()">Voltar
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  </form>
+  </div>
+</ion-content>

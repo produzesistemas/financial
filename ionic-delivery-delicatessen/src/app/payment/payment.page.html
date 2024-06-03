@@ -1,0 +1,162 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/shopping-cart"></ion-back-button> </ion-buttons>
+    <ion-label class="text-size"><ion-icon slot="start" name="location-outline"></ion-icon> Entregar em
+      {{lastPostalCode}}</ion-label>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div id="container">
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>Pagamento do pedido</ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row class="margin">
+          <ion-col>
+            <ion-label>Valor total do carrinho: {{getTotalShoppingCart(shoppingsCart) | currency:'R$'}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="margin">
+          <ion-col>
+            <ion-label>Valor da taxa de entrega: {{getTotalTaxValue() | currency:'R$'}} </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="margin">
+          <ion-col>
+            <ion-label>Valor total do pedido: {{getTotalSale() |
+              currency:'R$'}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+
+        <ion-row>
+          <ion-col>
+            <ion-item>Cupom</ion-item>
+          </ion-col>
+        </ion-row>
+        <form [formGroup]="formCoupon">
+          <ion-row class="margin">
+            <ion-col>
+              <ion-input labelPlacement="stacked" label="Informe o código do cupom para efetuar a busca"
+                formControlName="coupon">
+              </ion-input>
+            </ion-col>
+            <div class="error-container" *ngIf="isMinimunValue">
+              <div>
+                <p>
+                  <ion-label color="danger">* O valor mínimo do pedido para uso deste cupom é de: {{ minimumValue |
+                    currency:'R$'}}</ion-label>
+                </p>
+              </div>
+            </div>
+            <div class="error-container" *ngIf="submitted">
+              <div>
+                <p *ngIf="formCoupon.get('coupon').errors">
+                  <ion-label color="danger">* Informe o código do cupom para efetuar a busca</ion-label>
+                </p>
+              </div>
+            </div>
+          </ion-row>
+          <ion-row class="margin">
+            <ion-col>
+              <ion-button class="button-text-white" color="primary" shape="round" fill="solid" expand="full"
+                (click)="onSearchCoupon()">Aplicar cupom
+                <ion-icon slot="end" name="search" aria-hidden="true"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+
+
+        </form>
+
+        <ion-row>
+          <ion-col>
+            <ion-item>Opção de pagamento</ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="margin" *ngIf="closeOrderDTO">
+          <ion-col *ngIf="closeOrderDTO.establishment">
+            <ion-radio-group (ionChange)="onOptionPayment($event)">
+              <ion-radio class="ion-margin-end" value="littleMachine"
+                *ngIf="closeOrderDTO.establishment.delivery">Maquininha</ion-radio>
+              <ion-radio value="money" *ngIf="closeOrderDTO.establishment.instorePickup">Dinheiro</ion-radio>
+            </ion-radio-group>
+          </ion-col>
+        </ion-row>
+
+        <div *ngIf="isLittleMachine">
+
+  
+          <ion-row>
+            <ion-col>
+              <ion-item>Selecione o tipo de bandeira do cartão</ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row class="margin" *ngIf="closeOrderDTO">
+            <ion-col *ngIf="closeOrderDTO.establishment">
+              <ion-radio-group (ionChange)="onOptionCard($event)">
+                <ion-radio class="ion-margin-end" value="credit"
+                  *ngIf="closeOrderDTO.establishment.delivery">Cartão de crédito</ion-radio>
+                <ion-radio value="debit" *ngIf="closeOrderDTO.establishment.instorePickup">Cartão de débito</ion-radio>
+              </ion-radio-group>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="isCreditCard">
+            <ion-col class="ion-margin">
+                <ion-select label="Selecione" label-placement="floating" class="ion-margin-end"
+                  value="creditCard" fill="outline">
+                  <ion-select-option *ngFor="let credit of lstCredit">
+                    {{credit.brand!.name}}
+                    <ion-img [src]="getImage(credit.brand!.imageName || '')"></ion-img>
+                  </ion-select-option>
+                </ion-select>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="isDebitCard">
+            <ion-col class="ion-margin">
+                <ion-select label="Selecione" label-placement="floating" class="ion-margin-end"
+                  value="debitCard" fill="outline">
+                  <ion-select-option  *ngFor="let debit of lstDebit">
+                  {{debit.brand!.name}}
+                  </ion-select-option>
+                </ion-select>
+            </ion-col>
+          </ion-row>
+
+
+        </div>
+
+        <div *ngIf="isMoney">
+          <ion-row class="margin">
+            <ion-col>
+              <ion-input labelPlacement="stacked" label="Troco para"></ion-input>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <ion-row class="margin">
+          <ion-col>
+            <ion-button class="button-text-white" color="primary" fill="solid" shape="round" expand="full"
+              (click)="onConfirm()">Enviar
+              <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+
+    </ion-card>
+
+  </div>
+</ion-content>

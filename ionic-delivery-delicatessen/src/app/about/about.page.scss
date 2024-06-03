@@ -1,0 +1,21 @@
+ion-col {
+    display: flex;
+     align-items: center;
+     justify-content: center;
+  }
+  
+                ion-img{
+                    width: 150px;
+                    height: 150px;
+                    object-fit: contain;
+                    display: flex; align-items: center;justify-content: center;
+                }
+  
+                .bottomRow
+                {
+                  margin-top: -20px;
+                }
+  
+  .img{
+    display: flex; align-items: center;justify-content: center;
+  }

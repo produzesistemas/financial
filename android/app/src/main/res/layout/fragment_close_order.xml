@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_between_views">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_default"
+                    app:cardElevation="1dp"
+                    app:cardUseCompatPadding="true"
+                    app:strokeColor="@color/white">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:text="@string/label_resume_order"
+                            android:textAppearance="?attr/textAppearanceHeadline5" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/darker_gray"
+                            android:padding="@dimen/nav_header_vertical_spacing" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:text="@string/label_total_value_shopping"
+                                android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                            <TextView
+                                android:id="@+id/textViewTotalShopping"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:text="@string/label_tax_value"
+                                android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                            <TextView
+                                android:id="@+id/textViewTaxValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:text="@string/label_value_total"
+                                android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                            <TextView
+                                android:id="@+id/textViewValueTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:textAppearance="?attr/textAppearanceHeadline3" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_default"
+                    app:cardElevation="1dp"
+                    app:cardUseCompatPadding="true"
+                    app:strokeColor="@color/white">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:text="@string/label_personal_data"
+                            android:textAppearance="?attr/textAppearanceHeadline5" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btnEditPersonalData"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardElevation="1dp"
+                            app:cardUseCompatPadding="true">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:padding="@dimen/nav_header_vertical_spacing"
+                                    android:text="@string/action_inform_modify"
+                                    android:textAppearance="?attr/textAppearanceHeadline4" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/darker_gray"
+                            android:padding="@dimen/nav_header_vertical_spacing" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_default"
+                            android:text="@string/label_delivery_to"
+                            android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                        <TextView
+                            android:id="@+id/textViewName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_default"
+                            android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_default"
+                            android:text="@string/label_contact_phone"
+                            android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                        <TextView
+                            android:id="@+id/textViewPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_default"
+                            android:textAppearance="?attr/textAppearanceHeadline3" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_default"
+                            android:text="@string/label_cpf"
+                            android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                        <TextView
+                            android:id="@+id/textViewCpf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_default"
+                            android:textAppearance="?attr/textAppearanceHeadline3" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    >
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_default"
+                    app:cardElevation="1dp"
+                    app:cardUseCompatPadding="true"
+                    app:strokeColor="@color/white">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:text="@string/label_delivery_options"
+                            android:textAppearance="?attr/textAppearanceHeadline2" />
+
+                        <RadioGroup
+                            android:id="@+id/radioGroupDeliveryOptions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:theme="@style/CustomRadioGroup">
+
+                            <RadioButton
+                                android:id="@+id/radioButtonDelivery"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_delivery"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButtonInStorePickup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_in_store_pickup"/>
+
+                        </RadioGroup>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearLayoutAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_default"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/label_address"
+                                android:textAppearance="?attr/textAppearanceHeadline5" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/btnNewAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardElevation="1dp"
+                                app:cardUseCompatPadding="true">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:padding="@dimen/nav_header_vertical_spacing"
+                                        android:text="@string/action_new_address"
+                                        android:textAppearance="?attr/textAppearanceHeadline4" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/btnEditAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardElevation="1dp"
+                                app:cardUseCompatPadding="true">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:padding="@dimen/nav_header_vertical_spacing"
+                                        android:text="@string/action_update_address"
+                                        android:textAppearance="?attr/textAppearanceHeadline4" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/darker_gray"
+                            android:padding="@dimen/nav_header_vertical_spacing" />
+
+                        <TextView
+                            android:id="@+id/textViewId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/textViewPostalCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                        <TextView
+                            android:id="@+id/textViewStreet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textViewDistrict"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                            <TextView
+                                android:id="@+id/textViewCity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                            <TextView
+                                android:id="@+id/textViewUf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/nav_header_vertical_spacing"
+                                android:textAppearance="?attr/textAppearanceHeadline3" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <TextView
+                            android:id="@+id/textViewReference"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/nav_header_vertical_spacing"
+                            android:textAppearance="?attr/textAppearanceHeadline3" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu_bottom_close_order" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

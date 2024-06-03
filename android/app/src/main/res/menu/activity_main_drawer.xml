@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="@string/menu_about" />
+
+        <item
+            android:id="@+id/navigation_change_postal_code"
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="@string/menu_postal_code" />
+        <item
+            android:id="@+id/navigation_logout"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:title="@string/logout" />
+        <item
+            android:id="@+id/navigation_exit_app"
+            android:icon="@drawable/ic_baseline_exit_to_app_24"
+            android:title="@string/exit_to_app" />
+
+    </group>
+
+
+</menu>
