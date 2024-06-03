@@ -12,13 +12,13 @@ Front-end
 * Typescript 4.4
 * Html
 
-Aplicativo Android
+Aplicativo Android para e-commerce
 * Arquitetura MVVM
 * Retrofit
 * LiveData
 * Coroutines
 * Material Design
 
-Aplicativo IOS
+Aplicativo IOS para e-commerce
 * Ionic Framework 7
 * Angular 15
