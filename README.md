@@ -1,10 +1,10 @@
-Plataforma desenvolvida com o objetivo de ser um portal de controle administrativo de assinaturas de clientes. Desenvolvida com as seguintes tecnologias:
+Plataforma desenvolvida com o objetivo de ser um portal para controle administrativo de assinaturas de clientes. Desenvolvida com as seguintes tecnologias:
 
 Back-end:
 * API Rest .net core C#
 * Entity Framework
 * UnitOfWork
-* Repository
+* Repository Pattern
 
 Front-end
 * Angular 13
